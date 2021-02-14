@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mission to Mars HW 12
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- Add jumbo header -->
+        <div class="jumbotron text-center">
+                <h1>Visit Mars..</h1>
+                <p>Meet the Rovers.... Help Perseverance stay on course... Help search for water.... </p>
+                <!-- Use a button to retrieve the latest news -->
+                <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get the latest news from Mars!</a></p>
+        </div>
+
+        <!-- Latest Mars news now  -->
+        <div class="row" id="latest-news">
+            <div class="col-md-12">
+                <div class="media">
+                    <div class="media-body">
+                        <h2 class="text-left">News flash from the teletype machine </h2>
+                        <hr style="height:0.5px;border-width:0;color:gray;background-color:gray">
+                        <h3 class="text-left">{{mars_data['title']}}</h3>
+                        <p class="text-left">{{ mars_data['para']}}</p>
+                        <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Possible Path for Perseverance and Info table -->
+        <div class="row" id="pers-path-image">
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <h2>Annotated mosaic depection of possible route for Perseverance across Jezero Crater</h2>
+                <img style="margin: right 50px;"
+                    src="https://mars.nasa.gov/system/resources/detail_files/25540_e1-PIA24379-Ken-Farley-traverse--web.jpg"
+                    class="img-responsive" alt="Responsive image" />
+            </div>
+
+            <!-- Mars table -->
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <br>
+                <br>
+                <br>
+                <h2 class="text-center">Mars Information</h2>
+                    <table class="table table-bordered table-striped">
+                        {{ mars_data['table'] | safe}}
+                    </table>
+            </div>
+        </div> 
+
+        <!-- Mars Hemispheres Images-->
+        <div class="row" id="mars-images">
+            <div class="page-header">
+                <h2 class="text-center">Mars Hemispheres</h2>
+            </div>
+        
+            {% for hemi in mars_data['images'] %}
+            <div class="col-md-6">
+                <div class = "thumbnail">
+                    <img src="{{hemi.img_url}}" alt="hemisphere">
+                    <div class="title">
+                        <h3>{{hemi.title}}</h3>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        
+        </div>
+    </div>
+</body>
+
+</html>
