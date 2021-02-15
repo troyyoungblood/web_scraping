@@ -1,4 +1,3 @@
-# web_scraping
 20210217_Homework_TY
 ## Web-scraping for information about Mars
 
