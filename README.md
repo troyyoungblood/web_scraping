@@ -25,14 +25,28 @@ Images of the rendered browser.
 <img src="/Images/bottom.PNG">
 
 The following information is submitted for the activity
-
+<br>
+<br>
 code folder
+<br>
 mission_to_mars_TY.ipynb - jupyter notebook used with Pandas to develop and test code to scrape the source locations
+<br>
 app.py - executed first, calls the scrap_mars.py and index.html files
+<br>
 scrape_mars.py - scrapes the infromation
-
+<br>
+<br>
 templates folder
+<br>
 index.html - renders the information in a browser
-
+<br>
+<br>
+Images folder
+<br>
+top_part.png - top of rendered page for placement in README file
+<br>
+middle.png - middle of rendered page for placement in README file
+<br>
+bottom.png - bottom of rendered page for placement in README file
 
 
